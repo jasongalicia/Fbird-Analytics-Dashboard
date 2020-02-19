@@ -7,6 +7,8 @@ The password is hashed with salt.
 
 Click [here](https://fbird-analytical-dashboard.herokuapp.com/login) to login and [here](https://fbird-analytical-dashboard.herokuapp.com/signup) to sign up. 
 
+Click [here](https://github.com/jasongalicia/Flappy-Bird-Game-Java) to view Flappy Bird Game created in Java.
+
 ## Tools/Technologies Learned/Utilized
 
 - Python 
