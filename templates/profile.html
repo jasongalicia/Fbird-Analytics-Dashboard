@@ -1,0 +1,80 @@
+{% extends "layout.html"%}
+{% block content %}
+<div class="content-header">
+  <h3>My Profile</h3>
+  <hr>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-5">
+        <div class="profile">
+          <img src="{{url_for('static', filename='media/profilepic.png')}}" alt="">
+          <h4><strong>{{username}}</strong></h4>
+          <h6>Date Joined: {{date_created}}</h6>
+        </div>
+    </div>
+
+    <div class="col-lg-7">
+        <div class="profile-stats">
+          <h4><strong>Profile Stats</strong></h4>
+          <hr>
+          <h6>Best Score</h6>
+          <p class="data">{{stats[0]}}</p>
+          <hr>
+          <h6>Average Score</h6>
+          <p class="data">{{stats[1]}}</p>
+          <hr>
+          <h6>Games Played All-Time</h6>
+          <p class="data">{{stats[2]}}</p>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+        <div class="profile-recent-games">
+          <h4><strong>My Recent Games Played</strong></h4>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Game No.</th>
+                <th scope="col">Username</th>
+                <th scope="col">Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% if recent_games_length == 0 %}
+                {% for i in range(0, 5, 1)%}
+                <tr>
+                  <td>None</td>
+                  <td>None</td>
+                  <td>N/A</td>
+                </tr>
+                {% endfor %}
+              {% else %}
+                {% for i in range(recent_games_length-1, recent_games_length-6, -1)%}
+                    {% if i < 0 %}
+                    <tr>
+                      <td>None</td>
+                      <td>None</td>
+                      <td>N/A</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                      <td>{{recent_games[i][1]}}</td>
+                      <td>{{recent_games[i][2]}}</td>
+                      <td>{{recent_games[i][3]}}</td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+              {% endif %}
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

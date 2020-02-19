@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-header">
+  <h3>Top 25 Scores</h3>
+  <hr>
+</div>
+
+<div class="container-fluid top-scores-list">
+  <div class="row">
+    <div class="col-xl-12">
+      <h5><strong>Top 25 Scores</strong></h5>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Rank No.</th>
+            <th scope="col">Username</th>
+            <th scope="col">Score</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in range(0, 25, 1) %}
+          {% if i > list_length-1 %}
+          <tr>
+            <td scope="row">{{i+1}}</td>
+            <td scope="row">None</td>
+            <td scope="row">None</td>
+            <td scope="row">N/A</td>
+          </tr>
+          {% else %}
+          <tr>
+            <td scope="row">{{i+1}}</td>
+            <td scope="row">{{top_scores[i][1]}}</td>
+            <td scope="row">{{top_scores[i][2]}}</td>
+            <td scope="row">{{top_scores[i][3]}}</td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

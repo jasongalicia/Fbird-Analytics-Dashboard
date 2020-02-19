@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-header">
+  <h3>Home</h3>
+  <hr>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <div id="today-sect" class="home-stats-sect">
+        <h6>TDY AVG Score</h6>
+        <p>{{stats[0]}}</p>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <div id="qtd-sect" class="home-stats-sect">
+        <h6>MTD AVG Score</h6>
+        <p>{{stats[1]}}</p>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <div id="mtd-sect" class="home-stats-sect">
+        <h6>YTD AVG Score</h6>
+        <p>{{stats[2]}}</p>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <div id="ytd-sect" class="home-stats-sect">
+        <h6>GAT AVG Score</h6>
+        <p>{{stats[3]}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-7">
+        <div class="recent-scores-table">
+          <h5>Recent Scores</h5>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Score</th>
+                <th scope="col">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% if all_scores_length == 0 %}
+                {% for i in range(0, 6, 1)%}
+                <tr>
+                  <td>None</td>
+                  <td>None</td>
+                  <td>N/A</td>
+                </tr>
+                {% endfor %}
+              {% else %}
+                {% if all_scores_length < 6 %}
+                  {% for i in range(all_scores_length-1, all_scores_length-7, -1)%}
+                    {% if i < 0 %}
+                    <tr>
+                      <td>None</td>
+                      <td>None</td>
+                      <td>N/A</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                      <td>{{recent_scores[i][1]}}</td>
+                      <td>{{recent_scores[i][2]}}</td>
+                      <td>{{recent_scores[i][3]}}</td>
+                    </tr>
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+              {% endif %}
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    <div class="col-lg-5">
+      <div class="statistics-dtd">
+        <h6 id="stats-header">Today's Statistics</h6>
+        <hr>
+        <h6>Today's Standard Deviation</h6>
+        <p class="data">{{stats[4]}}</p>
+        <hr>
+        <h6>Today's Variance</h6>
+        <p class="data">{{stats[5]}}</p>
+        <hr>
+        <h6>Today's Highest Score Logged</h6>
+        <p class="data">{{stats[6]}}</p>
+        <hr>
+        <h6>Today's Total Games Played</h6>
+        <p class="data">{{stats[7]}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
