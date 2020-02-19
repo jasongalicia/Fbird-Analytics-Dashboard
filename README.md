@@ -39,6 +39,9 @@ app.config['MYSQL_DATABASE_CURSORCLASS'] ='DictCursor'
 app.config['SECRET_KEY'] = '(ENTER INFORMATION HERE)'
 ```
 
+# Current Bugs Or Issues
+(February 19, 2020): None at the current moment.
+
 ## Authors
 - Jason Galicia
 
