@@ -23,7 +23,7 @@ Click [here](https://fbird-analytical-dashboard.herokuapp.com/login) to login an
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
 ```bash
-pip install ir requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Authors
