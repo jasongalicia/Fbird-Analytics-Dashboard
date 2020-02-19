@@ -28,7 +28,7 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 pip install -r requirements.txt
 ```
 
-Under the "app.config" section, enter your own database information if you want to use this for your own doing.
+Under the "app.config" section in 'launcher.py, enter your own database information if you want to use this for your own doing.
 
 ```bash
 app.config['MYSQL_DATABASE_USER'] = '(ENTER INFORMATION HERE)'
