@@ -15,7 +15,7 @@ app.config['MYSQL_DATABASE_PASSWORD'] = 'd1faaab7'
 app.config['MYSQL_DATABASE_HOST'] = 'us-cdbr-iron-east-04.cleardb.net'
 app.config['MYSQL_DATABASE_DB'] = 'heroku_76662f7ef1da94f'
 app.config['MYSQL_DATABASE_CURSORCLASS'] ='DictCursor'
-app.config['SECRET_KEY'] = os.random(24)
+app.config['SECRET_KEY'] = os.urandom(24)
 
 mysql.init_app(app)
 
