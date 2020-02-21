@@ -11,14 +11,24 @@ Click [here](https://github.com/jasongalicia/Flappy-Bird-Game-Java) to view Flap
 
 ## Tools/Technologies Learned/Utilized
 
-- Python 
-- Flask Micro Framework
-- Git
-- Heroku
+Languages:
+- HTML5
+- CSS3
+- Python
 - MySQL
-- ClearDB MySQL
-- Sublime Text
+
+Framework:
+- Flask
+
+Version Control
+- Git
+
+Deployment:
+- Heroku
+
+Text Editors:
 - Atom
+- Sublime Text 3
 
 ## Installation
 
