@@ -26,8 +26,9 @@ Version Control
 Deployment:
 - Heroku
 
-Text Editors:
+Text Editors/IDE:
 - Atom
+- MySQL Workbench
 - Sublime Text 3
 
 ## Installation
