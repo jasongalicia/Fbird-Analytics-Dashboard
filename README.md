@@ -18,6 +18,7 @@ Languages:
 - MySQL
 
 Framework:
+- Bootstrap 4
 - Flask
 
 Version Control
