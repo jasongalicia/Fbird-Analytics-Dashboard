@@ -10,14 +10,12 @@ import os
 mysql = MySQL()
 app = Flask(__name__)
 
-random_key = str(os.urandom(24))
-
 app.config['MYSQL_DATABASE_USER'] = ''
 app.config['MYSQL_DATABASE_PASSWORD'] = ''
 app.config['MYSQL_DATABASE_HOST'] = ''
 app.config['MYSQL_DATABASE_DB'] = ''
 app.config['MYSQL_DATABASE_CURSORCLASS'] ='DictCursor'
-app.config['SECRET_KEY'] = '' + random_key
+app.config['SECRET_KEY'] = 'sdfgdsf3e45t64egr45guf@224532$#^dfg64'
 
 mysql.init_app(app)
 
